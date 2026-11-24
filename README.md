@@ -44,7 +44,7 @@ ParcelTrack/
 
 1. Clone repository:
    ```bash
-   git clone URL_REPOSITORY_GITHUB
+git clone https://github.com/27FeliciaGB/ParcelTrack.git
    ```
 
 2. Masuk ke folder proyek:
