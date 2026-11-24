@@ -33,7 +33,6 @@ ParcelTrack/
 ├── routes/
 │   └── packageRoutes.js
 ├── server.js
-├── .env
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
@@ -43,41 +42,49 @@ ParcelTrack/
 ## Instalasi dan Menjalankan Aplikasi
 
 1. Clone repository:
+
    ```bash
-git clone https://github.com/27FeliciaGB/ParcelTrack.git
+   git clone https://github.com/27FeliciaGB/ParcelTrack.git
    ```
 
 2. Masuk ke folder proyek:
+
    ```bash
    cd ParcelTrack
    ```
 
 3. Install dependencies:
+
    ```bash
    npm install
    ```
 
-4. Buat file `.env` dan sesuaikan konfigurasi MongoDB:
+4. Buat file `.env` di direktori utama proyek dan isi konfigurasi berikut:
+
    ```env
    MONGO_URI=mongodb://127.0.0.1:27017/parceltrack
    PORT=3000
    ```
 
-5. Jalankan aplikasi:
+5. Pastikan MongoDB Server sudah berjalan, kemudian jalankan aplikasi:
+
    ```bash
    npm run dev
    ```
 
-6. Server berjalan pada:
+6. Server berjalan pada alamat:
+
    ```text
    http://localhost:3000
    ```
 
-Pastikan MongoDB Server sudah berjalan sebelum menjalankan aplikasi.
-
 ## Daftar API Endpoint
 
-Base URL: `http://localhost:3000/api/packages`
+Base URL:
+
+```text
+http://localhost:3000/api/packages
+```
 
 | HTTP Method | Endpoint | Fungsi |
 |---|---|---|
@@ -87,11 +94,29 @@ Base URL: `http://localhost:3000/api/packages`
 | PUT | `/:id` | Memperbarui data paket berdasarkan ID |
 | DELETE | `/:id` | Menghapus paket berdasarkan ID |
 
+### Path Parameter
+
+Path Parameter digunakan untuk mengakses data paket berdasarkan ID.
+
+Contoh:
+
+```text
+GET /api/packages/ID_PAKET
+```
+
 ### Query Parameter
+
+Query Parameter digunakan untuk memfilter data paket berdasarkan status pengiriman.
 
 | Parameter | Contoh | Fungsi |
 |---|---|---|
 | status | `?status=Dalam%20Pengiriman` | Memfilter paket berdasarkan status pengiriman |
+
+Contoh penggunaan:
+
+```text
+GET /api/packages?status=Dalam%20Pengiriman
+```
 
 ## Contoh Data Paket
 
@@ -126,7 +151,10 @@ Pengujian mencakup:
 - Create, Read, Update, dan Delete data paket.
 - Path Parameter menggunakan ID paket.
 - Query Parameter untuk memfilter status paket.
-- Pemeriksaan HTTP response status code.
+- Pengujian data tidak lengkap dan ID tidak valid.
+- Pemeriksaan HTTP response status code, seperti 200, 201, 400, dan 404.
+
+Dokumentasi pengujian API tersedia dalam folder `Dokumentasi_Pengujian`.
 
 ## Author
 
