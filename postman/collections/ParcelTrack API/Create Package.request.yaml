@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:3000/api/packages
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nomorResi\": \"JIO002\",\r
+
+    \  \"namaPengirim\": \"Felicia\",\r
+
+    \  \"namaPenerima\": \"Andi\",\r
+
+    \  \"alamatAsal\": \"Jakarta\",\r
+
+    \  \"alamatTujuan\": \"Bekasi\",\r
+
+    \  \"kurir\": \"JNE\",\r
+
+    \  \"status\": \"Menunggu Pickup\"\r
+
+    }"
+order: 2000

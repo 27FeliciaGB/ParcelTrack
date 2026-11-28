@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:3000/api/packages/6b0a9433756357ee00379f94
+method: DELETE
+order: 6000
